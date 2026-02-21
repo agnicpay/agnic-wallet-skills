@@ -5,7 +5,7 @@ Pre-built [Vercel AI SDK](https://sdk.vercel.ai/) skills for the [AgnicPay](http
 ## Installation
 
 ```bash
-npx skills add @agnic/wallet-skills
+npx skills add agnicpay/agnic-wallet-skills
 ```
 
 ## Prerequisites
