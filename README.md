@@ -1,39 +1,63 @@
-# @agnic/wallet-skills
+# AgnicPay Agentic Wallet Skills
 
-Pre-built [Vercel AI SDK](https://sdk.vercel.ai/) skills for the [AgnicPay](https://pay.agnic.ai) wallet. Give any AI assistant the ability to check balances, send payments, trade tokens, and call x402-enabled APIs.
-
-## Installation
-
-```bash
-npx skills add agnicpay/agnic-wallet-skills
-```
-
-## Prerequisites
-
-The agent must be authenticated with the `agnic` CLI:
-
-```bash
-npx agnic@latest auth login
-# Opens browser → sign in → set spending limits → done
-```
+Agent Skills for crypto wallet operations. These skills enable AI agents to authenticate, check balances, send USDC, trade tokens, make x402 payments, and verify on-chain identity using the `agnic` CLI.
 
 ## Available Skills
 
 | Skill | Description |
 |-------|-------------|
-| **authenticate-wallet** | Browser-based OAuth login |
-| **check-balance** | USDC balance across networks |
-| **send-usdc** | Send USDC to a wallet address |
-| **trade-tokens** | Swap tokens on Base (USDC, ETH, etc.) |
-| **search-for-service** | Discover x402-enabled APIs |
-| **pay-for-service** | Make x402 payment requests |
-| **fund-wallet** | Instructions for funding your wallet |
-| **get-agent-identity** | ERC-8004 on-chain identity and trust score |
+| **authenticate-wallet** | Sign in to the wallet via browser OAuth |
+| **check-balance** | Check USDC balance across networks (Base, Solana) |
+| **send-usdc** | Send USDC to Ethereum wallet addresses |
+| **trade-tokens** | Swap/trade tokens on Base (USDC, ETH, WETH, cbETH, DAI, AERO) |
+| **search-for-service** | Search for paid API services via x402 |
+| **pay-for-service** | Make paid API requests via x402 |
+| **fund-wallet** | Get instructions for adding funds to the wallet |
+| **get-agent-identity** | Check on-chain ERC-8004 identity and trust score |
 
-## How It Works
+## Installation
 
-Each skill is a markdown file (`SKILL.md`) that instructs the AI assistant on how to use the `agnic` CLI. When a user's request matches a skill, the AI follows the instructions to execute the right commands.
+Install with Vercel's [Skills CLI](https://github.com/vercel/skills):
+
+```bash
+npx skills add agnicpay/agnic-wallet-skills
+```
+
+## Usage
+
+Skills are automatically available once installed. The agent will use them when relevant tasks are detected.
+
+Examples:
+
+- `Sign in to my wallet`
+- `Check my balance`
+- `Send 10 USDC to 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb7`
+- `Swap 5 USDC for ETH`
+- `Find a sentiment analysis API`
+- `Pay for https://api.example.com/data`
+- `What's my agent identity?`
+
+## Contributing
+
+To add a new skill:
+
+1. Create a folder in `./skills/` with a lowercase, hyphenated name
+2. Add a `SKILL.md` file with YAML frontmatter and instructions
+3. See the [Agent Skills specification](https://github.com/vercel/skills) for the complete format
+
+### Updating the agnic version
+
+All skills pin `agnic@latest` via `npx agnic@latest`. When testing against a specific version:
+
+```bash
+# Install a specific version
+npm install -g agnic@2.0.0
+```
 
 ## Documentation
 
 Full docs at [docs.agnic.ai/docs/agnicpay-features/skills](https://docs.agnic.ai/docs/agnicpay-features/skills)
+
+## License
+
+MIT
