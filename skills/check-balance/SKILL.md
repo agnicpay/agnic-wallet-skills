@@ -1,51 +1,75 @@
 ---
 name: check-balance
-description: Check USDC balance across networks (Base, Solana)
+description: Check USDC balance across networks. Use when you or the user want to check balance, see how much money is in the wallet, view funds, or check available USDC. Covers phrases like "check my balance", "how much USDC do I have", "what's my balance", "show funds", "wallet balance".
 user-invocable: true
 disable-model-invocation: false
-allowed-tools: ["Bash(npx agnic@latest *)"]
+allowed-tools: ["Bash(npx agnic@latest status*)", "Bash(npx agnic@latest balance*)"]
 ---
 
-# Check Balance
+# Checking USDC Balance
 
-Check the user's USDC balance across supported networks.
+Use the `npx agnic@latest balance` command to check USDC balance across supported networks.
 
-## Steps
+## Confirm wallet is initialized and authed
 
-1. Verify authentication:
-   ```bash
-   npx agnic@latest status --json
-   ```
-   If not authenticated, run `npx agnic@latest auth login` first.
-
-2. Check balance for all networks:
-   ```bash
-   npx agnic@latest balance --json
-   ```
-
-3. Or check a specific network:
-   ```bash
-   npx agnic@latest balance --network base --json
-   npx agnic@latest balance --network solana --json
-   ```
-
-## Expected Output
-
-```json
-[
-  { "network": "base", "balance": "125.50", "address": "0x..." },
-  { "network": "solana", "balance": "0", "address": "N/A" }
-]
+```bash
+npx agnic@latest status
 ```
+
+If the wallet is not authenticated, refer to the `authenticate-wallet` skill.
+
+## Command Syntax
+
+```bash
+npx agnic@latest balance [--network <network>] [--json]
+```
+
+## Options
+
+| Option               | Description                                |
+| -------------------- | ------------------------------------------ |
+| `--network <name>`   | Filter by network (default: all networks)  |
+| `--json`             | Output result as JSON                      |
 
 ## Supported Networks
 
-- `base` — Base mainnet (EVM, primary)
-- `solana` — Solana mainnet
-- `base-sepolia` — Base testnet
-- `solana-devnet` — Solana devnet
+| Network        | Description           |
+| -------------- | --------------------- |
+| `base`         | Base mainnet (primary) |
+| `base-sepolia` | Base testnet          |
+| `solana`       | Solana mainnet        |
+| `solana-devnet`| Solana devnet         |
+
+## Examples
+
+```bash
+# Check balance on all networks
+npx agnic@latest balance
+
+# Check balance on Base mainnet only
+npx agnic@latest balance --network base
+
+# Get JSON output
+npx agnic@latest balance --json
+```
+
+## Expected Output
+
+```
+Network       Balance      Address
+base          125.50 USDC  0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb7
+base-sepolia    0.00 USDC  0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb7
+solana          0.00 USDC  N/A
+solana-devnet   0.00 USDC  N/A
+```
+
+## Prerequisites
+
+- Must be authenticated (`npx agnic@latest status` to check)
 
 ## Error Handling
 
-- If not authenticated: prompt user to run `npx agnic@latest auth login`
-- If a network returns an error, report it and show available balances
+Common errors:
+
+- "Not authenticated" — Run `npx agnic@latest auth login` first
+- Network timeout — Try again or specify a single network with `--network base`

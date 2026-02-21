@@ -1,57 +1,85 @@
 ---
 name: search-for-service
-description: Search for x402-enabled APIs and services
+description: Search and browse the x402 bazaar marketplace for paid API services. Use when you or the user want to find available services, see what's available, discover APIs, or need an external service to accomplish a task. Also use as a fallback when no other skill clearly matches — search the bazaar to see if a paid service exists. Covers "what can I do?", "find me an API for...", "what services are available?", "search for...", "browse the bazaar".
 user-invocable: true
 disable-model-invocation: false
-allowed-tools: ["Bash(npx agnic@latest *)"]
+allowed-tools: ["Bash(npx agnic@latest x402 bazaar *)", "Bash(npx agnic@latest x402 details *)"]
 ---
 
-# Search for Service
+# Searching the x402 Bazaar
 
-Discover x402-enabled APIs that can be paid for using AgnicPay.
+Use the `npx agnic@latest x402` commands to discover and inspect paid API endpoints available on the x402 bazaar marketplace. No authentication or balance is required for searching.
 
-## Steps
+## Commands
 
-1. Search for APIs matching the user's query:
-   ```bash
-   npx agnic@latest x402 search "<query>" --json
-   ```
+### Search the Bazaar
 
-2. Optionally filter by category:
-   ```bash
-   npx agnic@latest x402 search "<query>" --category AI --json
-   ```
-
-3. Present the results to the user with names, descriptions, prices, and URLs.
-
-## Parameters
-
-- `<query>` — Search term (e.g., "sentiment analysis", "weather data")
-- `--category` — Filter by category: AI, Crypto, Data, Trading, Finance, Weather
-- `--limit <n>` — Max results (default: 10)
-
-## Example
+Find paid services by keyword using BM25 relevance search:
 
 ```bash
-npx agnic@latest x402 search "sentiment analysis" --category AI --json
+npx agnic@latest x402 bazaar search <query> [-k <n>] [--force-refresh] [--json]
 ```
 
-## Expected Output
+| Option            | Description                          |
+| ----------------- | ------------------------------------ |
+| `-k, --top <n>`   | Number of results (default: 5)       |
+| `--force-refresh` | Re-fetch resource index from CDP API |
+| `--json`          | Output as JSON                       |
 
-```json
-{
-  "apis": [
-    {
-      "name": "Sentiment Pro",
-      "description": "Real-time sentiment analysis",
-      "price": "0.001",
-      "url": "https://api.example.com/sentiment"
-    }
-  ]
-}
+Results are cached locally at `~/.config/agnic/bazaar/` and auto-refresh after 12 hours.
+
+### List Bazaar Resources
+
+Browse all available resources:
+
+```bash
+npx agnic@latest x402 bazaar list [--network <network>] [--full] [--json]
 ```
+
+| Option             | Description                             |
+| ------------------ | --------------------------------------- |
+| `--network <name>` | Filter by network (base, base-sepolia)  |
+| `--full`           | Show complete details including schemas |
+| `--json`           | Output as JSON                          |
+
+### Discover Payment Requirements
+
+Inspect an endpoint's x402 payment requirements without paying:
+
+```bash
+npx agnic@latest x402 details <url> [--json]
+```
+
+Auto-detects the correct HTTP method (GET, POST, PUT, DELETE, PATCH) by trying each until it gets a 402 response, then displays price, accepted payment schemes, network, and input/output schemas.
+
+## Examples
+
+```bash
+# Search for weather-related paid APIs
+npx agnic@latest x402 bazaar search "weather"
+
+# Search with more results
+npx agnic@latest x402 bazaar search "sentiment analysis" -k 10
+
+# Browse all bazaar resources with full details
+npx agnic@latest x402 bazaar list --full
+
+# Check what an endpoint costs
+npx agnic@latest x402 details https://example.com/api/weather
+```
+
+## Prerequisites
+
+- No authentication needed for search, list, or details commands
+
+## Next Steps
+
+Once you've found a service you want to use, use the `pay-for-service` skill to make a paid request to the endpoint.
 
 ## Error Handling
 
-- If no results found, suggest broadening the search or trying different keywords
-- Authentication is NOT required for search (it's a public endpoint)
+Common errors:
+
+- "CDP API returned 429" — Rate limited; cached data will be used if available
+- "No X402 payment requirements found" — URL may not be an x402 endpoint
+- No results — Try broadening the search query or using different keywords
