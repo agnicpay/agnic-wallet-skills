@@ -1,6 +1,6 @@
 {
   "name": "@agnic/wallet-skills",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Vercel AI SDK skills for AgnicPay wallet — balance, payments, trading, x402, and agent identity",
   "keywords": [
     "agnic",
