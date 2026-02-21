@@ -1,55 +1,39 @@
 # @agnic/wallet-skills
 
-Pre-built AI agent skills for [AgnicPay](https://pay.agnic.ai) — x402 payments, token trading, and identity.
+Pre-built [Vercel AI SDK](https://sdk.vercel.ai/) skills for the [AgnicPay](https://pay.agnic.ai) wallet. Give any AI assistant the ability to check balances, send payments, trade tokens, and call x402-enabled APIs.
 
-Compatible with the [Vercel AI SDK](https://sdk.vercel.ai) skills system.
-
-## Install
+## Installation
 
 ```bash
 npx skills add @agnic/wallet-skills
 ```
 
-## Available Skills
-
-| Skill | Trigger Phrases | What It Does |
-|-------|-----------------|--------------|
-| **authenticate-wallet** | "log in", "sign in" | Email OTP login flow |
-| **check-balance** | "check balance", "how much do I have" | USDC balance across networks |
-| **send-usdc** | "send", "transfer", "pay someone" | Send USDC to a wallet |
-| **trade-tokens** | "trade", "swap", "buy ETH" | Swap tokens on Base |
-| **search-for-service** | "find an API", "search for" | Discover x402-enabled APIs |
-| **pay-for-service** | "call this API", "use this service" | Make x402 payment requests |
-| **fund-wallet** | "add funds", "deposit" | Instructions for funding |
-| **get-agent-identity** | "agent identity", "trust score" | ERC-8004 identity & credentials |
-
 ## Prerequisites
 
-Skills use the `agnic` CLI under the hood:
+The agent must be authenticated with the `agnic` CLI:
 
 ```bash
-npm install -g agnic
-agnic auth login you@example.com
+npx agnic@latest auth login
+# Opens browser → sign in → set spending limits → done
 ```
+
+## Available Skills
+
+| Skill | Description |
+|-------|-------------|
+| **authenticate-wallet** | Browser-based OAuth login |
+| **check-balance** | USDC balance across networks |
+| **send-usdc** | Send USDC to a wallet address |
+| **trade-tokens** | Swap tokens on Base (USDC, ETH, etc.) |
+| **search-for-service** | Discover x402-enabled APIs |
+| **pay-for-service** | Make x402 payment requests |
+| **fund-wallet** | Instructions for funding your wallet |
+| **get-agent-identity** | ERC-8004 on-chain identity and trust score |
 
 ## How It Works
 
-Each skill is a markdown instruction file that teaches AI assistants how to complete wallet tasks using CLI commands. When a user's request matches a skill, the AI follows the instructions automatically.
-
-**Example:** User says "swap 10 USDC for ETH" → `trade-tokens` skill runs:
-```bash
-agnic balance --network base --json
-agnic trade 10 usdc eth --json
-```
-
-## Unique: Agent Identity
-
-The `get-agent-identity` skill has no equivalent in other wallet tools. It lets AI agents check their on-chain [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) identity, trust score, and KYA credentials.
+Each skill is a markdown file (`SKILL.md`) that instructs the AI assistant on how to use the `agnic` CLI. When a user's request matches a skill, the AI follows the instructions to execute the right commands.
 
 ## Documentation
 
 Full docs at [docs.agnic.ai/docs/agnicpay-features/skills](https://docs.agnic.ai/docs/agnicpay-features/skills)
-
-## License
-
-MIT

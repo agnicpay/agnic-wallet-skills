@@ -1,25 +1,20 @@
 {
   "name": "@agnic/wallet-skills",
-  "version": "1.0.1",
-  "description": "AI agent wallet skills for x402 payments, token trading, and identity",
-  "skills": "skills/",
-  "files": [
-    "skills/",
-    "README.md"
-  ],
+  "version": "1.1.0",
+  "description": "Vercel AI SDK skills for AgnicPay wallet — balance, payments, trading, x402, and agent identity",
   "keywords": [
-    "vercel-ai-skills",
+    "agnic",
+    "agnicpay",
+    "skills",
+    "vercel-ai",
     "x402",
     "wallet",
-    "ai-agent",
-    "trading",
-    "erc-8004",
-    "agnicpay"
+    "ai-agent"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agnicpay/agnic-wallet-skills"
+    "url": "https://github.com/agnic-protocol/agnic-wallet-skills"
   },
   "homepage": "https://docs.agnic.ai/docs/agnicpay-features/skills"
 }
