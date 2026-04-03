@@ -14,6 +14,8 @@ Agent Skills for crypto wallet operations. These skills enable AI agents to auth
 | **pay-for-service** | Make paid API requests via x402 |
 | **fund-wallet** | Get instructions for adding funds to the wallet |
 | **get-agent-identity** | Check on-chain ERC-8004 identity and trust score |
+| **agent-email** | Manage agent email — send, receive, check inbox |
+| **agnic** | Unified skill — all wallet, payment, email, and identity capabilities |
 
 ## Installation
 
