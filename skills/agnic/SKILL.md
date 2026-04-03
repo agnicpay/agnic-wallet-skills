@@ -95,7 +95,7 @@ npx agnic@latest ai image --prompt 'Logo design' --aspect-ratio 16:9 --output lo
 ```
 
 340+ models from OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek, and more.
-Model format: `provider/model-name` (e.g., `openai/gpt-4o`, `google/gemini-2.0-flash`)
+Model format: `provider/model-name` (e.g., `openai/gpt-4o`, `google/gemini-2.5-flash-image`)
 Free models: `meta-llama/*`, `google/gemma-*`, `mistralai/*`
 
 ### Workflow: Sign Up + Pay + Report

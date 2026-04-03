@@ -46,7 +46,7 @@ Models use `provider/model-name` format:
 | ----------- | ----------------------------------------- |
 | openai | `openai/gpt-4o`, `openai/gpt-4-turbo` |
 | anthropic | `anthropic/claude-3.5-sonnet` |
-| google | `google/gemini-2.0-flash`, `google/gemma-*` |
+| google | `google/gemini-2.5-flash-image`, `google/gemma-*` |
 | meta-llama | `meta-llama/llama-3.3-70b` |
 | mistralai | `mistralai/mistral-large-latest` |
 | deepseek | `deepseek/deepseek-chat` |
@@ -79,7 +79,7 @@ Free models: `meta-llama/*`, `google/gemma-*`, `mistralai/*`
 | Option | Description |
 | ------------------------- | ---------------------------------------- |
 | `--prompt <text>` | Image description (required) |
-| `--model <id>` | Model (default: google/gemini-2.0-flash) |
+| `--model <id>` | Model (default: google/gemini-2.5-flash-image) |
 | `--aspect-ratio <ratio>` | 1:1, 16:9, 9:16, 4:3, 3:2 (default: 1:1)|
 | `--output <path>` | Save image to file |
 | `--json` | Output as JSON |
@@ -131,7 +131,7 @@ npx agnic@latest ai image --prompt 'Logo design for a tech startup' --json
 
 - Must be authenticated (`npx agnic@latest status` to check)
 - Wallet must have USDC balance (free models available for testing)
-- Image generation requires a model with image output support (default: google/gemini-2.0-flash)
+- Image generation requires a model with image output support (default: google/gemini-2.5-flash-image)
 
 ## Error Handling
 
