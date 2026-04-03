@@ -123,6 +123,10 @@ npx agnic@latest ai image --prompt 'A sunset over mountains' --output sunset.png
 # Generate widescreen image
 npx agnic@latest ai image --prompt 'Cyberpunk cityscape' --aspect-ratio 16:9 --output city.png
 
+# Use a specific image model
+npx agnic@latest ai image --prompt 'A portrait painting' --model openai/gpt-5-image --output portrait.png
+npx agnic@latest ai image --prompt 'Abstract art' --model black-forest-labs/flux.2-max --output art.png
+
 # Get image as JSON (base64)
 npx agnic@latest ai image --prompt 'Logo design for a tech startup' --json
 ```
@@ -131,7 +135,13 @@ npx agnic@latest ai image --prompt 'Logo design for a tech startup' --json
 
 - Must be authenticated (`npx agnic@latest status` to check)
 - Wallet must have USDC balance (free models available for testing)
-- Image generation requires a model with image output support (default: google/gemini-2.5-flash-image)
+- Image generation models:
+  - `google/gemini-2.5-flash-image` (default) — fast, good quality
+  - `google/gemini-3-pro-image-preview` — highest quality Google model
+  - `google/gemini-3.1-flash-image-preview` — latest flash preview
+  - `openai/gpt-5-image` — OpenAI image generation
+  - `black-forest-labs/flux.2-max` — Flux high quality
+  - `black-forest-labs/flux.2-klein-4b` — Flux lightweight/fast
 
 ## Error Handling
 
