@@ -78,6 +78,26 @@ npx agnic@latest email send --to user@example.com --subject "Hello" --body "Mess
 npx agnic@latest email reply --message-id <id> --body "Reply text"
 ```
 
+### AI Gateway
+
+```bash
+# List available AI models
+npx agnic@latest ai models --json
+npx agnic@latest ai models --provider openai --json
+
+# Chat with an AI model
+npx agnic@latest ai chat --model openai/gpt-4o --prompt 'Explain quantum computing' --json
+npx agnic@latest ai chat --model meta-llama/llama-3.3-70b --prompt 'Summarize this text' --json
+
+# Generate an image
+npx agnic@latest ai image --prompt 'A sunset over mountains' --output sunset.png
+npx agnic@latest ai image --prompt 'Logo design' --aspect-ratio 16:9 --output logo.png
+```
+
+340+ models from OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek, and more.
+Model format: `provider/model-name` (e.g., `openai/gpt-4o`, `google/gemini-2.0-flash`)
+Free models: `meta-llama/*`, `google/gemma-*`, `mistralai/*`
+
 ### Workflow: Sign Up + Pay + Report
 
 1. Check auth: `npx agnic@latest status --json`
