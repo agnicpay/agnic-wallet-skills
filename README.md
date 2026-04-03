@@ -1,6 +1,6 @@
 # AgnicPay Agentic Wallet Skills
 
-Agent Skills for crypto wallet operations. These skills enable AI agents to authenticate, check balances, send USDC, trade tokens, make x402 payments, and verify on-chain identity using the `agnic` CLI.
+Agent Skills for crypto wallet operations. These skills enable AI agents to authenticate, check balances, send USDC, trade tokens, make x402 payments, access 340+ AI models, generate images, and verify on-chain identity using the `agnic` CLI.
 
 ## Available Skills
 
@@ -15,7 +15,8 @@ Agent Skills for crypto wallet operations. These skills enable AI agents to auth
 | **fund-wallet** | Get instructions for adding funds to the wallet |
 | **get-agent-identity** | Check on-chain ERC-8004 identity and trust score |
 | **agent-email** | Manage agent email — send, receive, check inbox |
-| **agnic** | Unified skill — all wallet, payment, email, and identity capabilities |
+| **ai-gateway** | Access 340+ AI models — chat, image generation (GPT, Claude, Gemini, Llama, Flux) |
+| **agnic** | Unified skill — all wallet, payment, email, identity, and AI capabilities |
 
 ## Installation
 
@@ -38,6 +39,9 @@ Examples:
 - `Find a sentiment analysis API`
 - `Pay for https://api.example.com/data`
 - `What's my agent identity?`
+- `List available AI models`
+- `Ask GPT-4o to explain quantum computing`
+- `Generate an image of a sunset over mountains`
 
 ## Contributing
 
