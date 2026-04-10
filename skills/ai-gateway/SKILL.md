@@ -148,7 +148,7 @@ npx agnic@latest ai image --prompt 'Logo design for a tech startup' --json
 Common errors:
 
 - "Not authenticated" — Run `npx agnic@latest auth login` first
-- "Insufficient balance" — Fund wallet at https://pay.agnic.ai
+- "Insufficient balance" — Fund wallet at https://app.agnic.ai
 - "Model not found" — Check available models with `npx agnic@latest ai models`
 - "No image returned" — Try a different model or rephrase the prompt
 - "Rate limit exceeded" — Wait a moment and retry

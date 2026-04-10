@@ -12,7 +12,7 @@ description: Check agent's on-chain identity, trust score, and KYA credentials. 
    - Trust score and reputation
    - KYA (Know Your Agent) credentials for identity verification
    - Delegation credentials for authorized actions
-4. Direct user to https://pay.agnic.ai for full identity management
+4. Direct user to https://app.agnic.ai for full identity management
 
 ## Allowed Tools
 - npx agnic status

@@ -75,5 +75,5 @@ ERC-8004 ("Trustless Agents") is an Ethereum standard that gives AI agents:
 Common errors:
 
 - "Not authenticated" — Run `npx agnic@latest auth login` first
-- "No agent identity found" — The user may not have an agent registered yet; create one via the AgnicPay dashboard at [pay.agnic.ai](https://pay.agnic.ai)
+- "No agent identity found" — The user may not have an agent registered yet; create one via the AgnicPay dashboard at [app.agnic.ai](https://app.agnic.ai)
 - "Agent suspended" — The agent's delegation may have been revoked; contact support
