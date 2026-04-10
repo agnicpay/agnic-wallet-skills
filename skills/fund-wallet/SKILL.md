@@ -33,7 +33,7 @@ This displays the user's wallet address on each supported network.
 1. Go to [pay.agnic.ai](https://pay.agnic.ai)
 2. Sign in with the same account used in the CLI
 3. Navigate to the dashboard
-4. Use the **"Add Funds"** button to deposit USDC via card, bank transfer, or crypto
+4. Use the **"Add Funds"** button to add USDC via card or on-chain funding
 
 ### Option 2: Direct USDC Transfer
 

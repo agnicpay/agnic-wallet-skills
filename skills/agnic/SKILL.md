@@ -1,9 +1,9 @@
 ---
 name: agnic
 description: >
-  Complete AI agent wallet with payments, trading, email, and on-chain identity.
-  Use when the user wants to manage their agent's wallet, make payments, trade tokens,
-  send/receive email, or check their agent identity.
+  Complete AI agent wallet with payments, email, AI gateway, and on-chain identity.
+  Use when the user wants to manage their agent's wallet, make payments,
+  send/receive email, access AI models, or check their agent identity.
 user-invocable: true
 disable-model-invocation: false
 allowed-tools: ["Bash(npx agnic@latest *)"]
@@ -11,7 +11,7 @@ allowed-tools: ["Bash(npx agnic@latest *)"]
 
 ## Agnic — Unified Agent Wallet Skill
 
-This skill gives your AI agent a full identity stack: wallet, email, payments, trading, and on-chain identity.
+This skill gives your AI agent a full identity stack: wallet, email, payments, AI gateway, and on-chain identity.
 
 ### Authentication
 
@@ -41,24 +41,6 @@ npx agnic@latest x402 preview <url>
 
 # Make a paid API call
 npx agnic@latest x402 pay <url> --method GET --json
-```
-
-### Token Trading
-
-```bash
-# Get a quote
-npx agnic@latest trade quote 10 USDC ETH --json
-
-# Execute a trade (Base mainnet only)
-npx agnic@latest trade 10 USDC ETH --json
-```
-
-Supported tokens: USDC, ETH, WETH, cbETH, DAI, AERO
-
-### Send USDC
-
-```bash
-npx agnic@latest send <amount> <address> --network base --json
 ```
 
 ### Agent Identity

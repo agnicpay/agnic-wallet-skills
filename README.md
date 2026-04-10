@@ -1,6 +1,6 @@
 # AgnicPay Agentic Wallet Skills
 
-Agent Skills for crypto wallet operations. These skills enable AI agents to authenticate, check balances, send USDC, trade tokens, make x402 payments, access 340+ AI models, generate images, and verify on-chain identity using the `agnic` CLI.
+Agent Skills for crypto wallet operations. These skills enable AI agents to authenticate, check balances, make x402 payments, access 340+ AI models, generate images, and verify on-chain identity using the `agnic` CLI.
 
 ## Available Skills
 
@@ -8,15 +8,13 @@ Agent Skills for crypto wallet operations. These skills enable AI agents to auth
 |-------|-------------|
 | **authenticate-wallet** | Sign in to the wallet via browser OAuth |
 | **check-balance** | Check USDC balance across networks (Base, Solana) |
-| **send-usdc** | Send USDC to Ethereum wallet addresses |
-| **trade-tokens** | Swap/trade tokens on Base (USDC, ETH, WETH, cbETH, DAI, AERO) |
 | **search-for-service** | Search for paid API services via x402 |
 | **pay-for-service** | Make paid API requests via x402 |
 | **fund-wallet** | Get instructions for adding funds to the wallet |
 | **get-agent-identity** | Check on-chain ERC-8004 identity and trust score |
 | **agent-email** | Manage agent email — send, receive, check inbox |
 | **ai-gateway** | Access 340+ AI models — chat, image generation (GPT, Claude, Gemini, Llama, Flux) |
-| **agnic** | Unified skill — all wallet, payment, email, identity, and AI capabilities |
+| **agnic** | Unified skill — all wallet, payment, email, identity, and AI gateway capabilities |
 
 ## Installation
 
@@ -34,8 +32,6 @@ Examples:
 
 - `Sign in to my wallet`
 - `Check my balance`
-- `Send 10 USDC to 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb7`
-- `Swap 5 USDC for ETH`
 - `Find a sentiment analysis API`
 - `Pay for https://api.example.com/data`
 - `What's my agent identity?`
