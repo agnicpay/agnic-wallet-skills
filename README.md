@@ -1,4 +1,4 @@
-# Agnic Wallet Skills for Claude Code
+# Agnic Wallet Skills
 
 Give your AI agent a crypto wallet, payments, email, and on-chain identity.
 
@@ -19,10 +19,10 @@ These skills enable AI agents to authenticate, check balances, make x402 payment
 
 ## Installation
 
-Install with the [Skills CLI](https://github.com/vercel/skills):
+Install with the [Skills CLI](https://github.com/vercel/skills). Compatible with any AI coding tool that supports the SKILL.md specification — Claude Code, Cline, Cursor, Windsurf, and more.
 
 ```bash
-npx skills add agnic-protocol/agnic-wallet-skills
+npx skills add agnicpay/agnic-wallet-skills
 ```
 
 ## Authentication

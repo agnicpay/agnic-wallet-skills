@@ -16,11 +16,11 @@
 
 ### Changed
 - All skills: standardized authentication section with dual-mode support (browser OAuth + headless token).
-- All skills: optimized descriptions for Claude discovery with front-loaded trigger keywords.
+- All skills: optimized descriptions for AI agent discovery with front-loaded trigger keywords.
 - All skills: scoped `allowed-tools` patterns (no wildcards).
 - Rebranded "AgnicPay" references to "Agnic" throughout.
 - Updated install command from `agnicpay/` to `agnic-protocol/` org.
-- Updated npm keywords: added `claude-code`, `erc-8004`, `headless-auth`; removed `agnicpay`, `vercel-ai`.
+- Updated npm keywords: added `claude-code`, `cline`, `cursor`, `windsurf`, `erc-8004`, `headless-auth`; removed `agnicpay`, `vercel-ai`.
 
 ### Fixed
 - **Security**: `pay-for-service` could be auto-invoked by Claude, spending real USDC without explicit user consent.
