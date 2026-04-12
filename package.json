@@ -1,6 +1,6 @@
 {
   "name": "@agnic/wallet-skills",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "AI agent skills for the Agnic wallet — payments, x402, AI gateway, agent email, and on-chain identity",
   "keywords": [
     "agnic",

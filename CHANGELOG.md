@@ -19,7 +19,7 @@
 - All skills: optimized descriptions for AI agent discovery with front-loaded trigger keywords.
 - All skills: scoped `allowed-tools` patterns (no wildcards).
 - Rebranded "AgnicPay" references to "Agnic" throughout.
-- Updated install command from `agnicpay/` to `agnic-protocol/` org.
+- Install command uses `agnicpay/agnic-wallet-skills` (matching GitHub org).
 - Updated npm keywords: added `claude-code`, `cline`, `cursor`, `windsurf`, `erc-8004`, `headless-auth`; removed `agnicpay`, `vercel-ai`.
 
 ### Fixed
